@@ -44,7 +44,7 @@ class MineView
     {
         private final JComboBox<String> difficulty;
         private final JLabel flagsLabel, timeLabel;
-        private final javax.swing.Timer timer;
+        private final Timer timer;
 
         ControlPanel()
         {
@@ -179,13 +179,13 @@ class MineView
         } // paintComponent()
 
         // Draws a gray cell with a border half white, half gray (Added by Alvin Zhang)
-        private void drawDefaultCell(Graphics pen, int nw_x, int nw_y) {
+        private void drawDefaultCell(Graphics pen, int x, int y) {
             pen.setColor(Color.LIGHT_GRAY);
-            pen.fillRect(nw_x, nw_y, cellSize, cellSize);
-            int[] outline1_x = new int[] {nw_x, nw_x, nw_x+ cellSize, nw_x+7* cellSize /8, nw_x+ cellSize /8, nw_x+ cellSize /8};
-            int[] outline1_y = new int[] {nw_y+ cellSize, nw_y, nw_y, nw_y+ cellSize /8, nw_y+ cellSize /8, nw_y+7* cellSize /8};
-            int[] outline2_x = new int[] {nw_x+ cellSize, nw_x+ cellSize, nw_x, nw_x+ cellSize /8, nw_x+7* cellSize /8, nw_x+7* cellSize /8};
-            int[] outline2_y = new int[] {nw_y, nw_y+ cellSize, nw_y+ cellSize, nw_y+7* cellSize /8, nw_y+7* cellSize /8, nw_y+ cellSize /8};
+            pen.fillRect(x, y, cellSize, cellSize);
+            int[] outline1_x = new int[] {x, x, x+ cellSize, x+7* cellSize /8, x+ cellSize /8, x+ cellSize /8};
+            int[] outline1_y = new int[] {y+ cellSize, y, y, y+ cellSize /8, y+ cellSize /8, y+7* cellSize /8};
+            int[] outline2_x = new int[] {x+ cellSize, x+ cellSize, x, x+ cellSize /8, x+7* cellSize /8, x+7* cellSize /8};
+            int[] outline2_y = new int[] {y, y+ cellSize, y+ cellSize, y+7* cellSize /8, y+7* cellSize /8, y+ cellSize /8};
             pen.setColor(Color.WHITE);
             pen.fillPolygon(outline1_x, outline1_y, 6);
             pen.setColor(Color.GRAY);
